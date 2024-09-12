@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador - Pastelería Nelly</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf2f2;
+        }
+
+        header {
+            background-color: #ff5e57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            background-color: #ff785a;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .search-container button:hover {
+            background-color: #ff5e57;
+        }
+
+        .cart {
+            font-size: 1.5em;
+            color: #ff785a;
+            text-decoration: none;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cart img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            position: relative;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            background-color: #ff785a;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ff5e57;
+        }
+
+        .ratings {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .rating-star {
+            color: gold;
+            font-size: 1.2em;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+
+        .comments {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .comment {
+            margin-bottom: 10px;
+        }
+
+        .comment p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #ff785a;
+        }
+
+        .comment-text {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Buscador - Pastelería Nelly</h1>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Buscar productos..." oninput="searchProducts()">
+        <a href="carrito.html" class="cart">
+            <img src="https://cdn-icons-png.freepik.com/512/5993/5993337.png" alt="Carrito">
+        </a>
+    </div>
+
+    <div class="products-container" id="products-container">
+        <!-- Productos se agregarán dinámicamente aquí -->
+        <div class="product-suggestion" id="product-suggestion">
+            <!-- Espacio para sugerir productos -->
+        </div>
+    </div>
+
+    <script>
+        // Productos disponibles
+        const products = [
+            {
+                id: 1,
+                name: 'Pastel de Zanahoria',
+                price: 350,
+                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAM21N8xb7HUFy4FRLd9xxErt6JqP7Hnb_OA&s',
+                rating: 4.5,
+                comments: [
+                    { author: 'Ana', text: 'Delicioso pastel, muy recomendado!' },
+                    { author: 'Luis', text: 'Excelente sabor, volveré a comprar.' }
+                ]
+            },
+            {
+                id: 2,
+                name: 'Pan de Plátano',
+                price: 300,
+                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL6R00UNXi-GMF8tK3cqfypmCO0jgW8bXBug&s',
+                rating: 4.0,
+                comments: [
+                    { author: 'María', text: 'El pan es muy suave y sabroso.' },
+                    { author: 'Carlos', text: 'Buena calidad, pero podría ser más dulce.' }
+                ]
+            },
+            {
+                id: 3,
+                name: 'Pan de Elote',
+                price: 250,
+                image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS65u7TsXILouy-mO2fydC9VSstO4M1uPB3_w&s',
+                rating: 5.0,
+                comments: [
+                    { author: 'Sofia', text: 'Me encantó, muy esponjoso.' },
+                    { author: 'Jorge', text: 'Uno de los mejores panes de elote que he probado.' }
+                ]
+            }
+        ];
+
+        function displayProducts(products) {
+            const container = document.getElementById('products-container');
+            const suggestionContainer = document.getElementById('product-suggestion');
+            container.innerHTML = ''; // Limpiar el contenedor
+            suggestionContainer.innerHTML = ''; // Limpiar sugerencias
+
+            if (products.length === 0) {
+                suggestionContainer.innerHTML = `<div class="product">
+                    <h3>¿No encuentras lo que buscas?</h3>
+                    <p>Consulta nuestras categorías para ver más opciones.</p>
+                </div>`;
+                return;
+            }
+
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Precio: $${product.price.toFixed(2)}</p>
+                    <div class="ratings">${renderStars(product.rating)}</div>
+                    <div class="comments">${renderComments(product.comments)}</div>
+                    <button class="add-to-cart" onclick="addToCart(${product.id})">Añadir al carrito</button>
+                `;
+                container.appendChild(productDiv);
+            });
+        }
+
+        function renderStars(rating) {
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                stars += `<span class="rating-star">${i < rating ? '★' : '☆'}</span>`;
+            }
+            return stars;
+        }
+
+        function renderComments(comments) {
+            return comments.map(comment => `
+                <div class="comment">
+                    <p class="comment-author">${comment.author}:</p>
+                    <p class="comment-text">${comment.text}</p>
+                </div>
+            `).join('');
+        }
+
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(query)
+            );
+            displayProducts(filteredProducts);
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`Producto "${product.name}" añadido al carrito.`);
+        }
+
+        // Mostrar todos los productos al cargar la página
+        window.onload = () => {
+            displayProducts(products);
+        };
+    </script>
+</body>
+</html>

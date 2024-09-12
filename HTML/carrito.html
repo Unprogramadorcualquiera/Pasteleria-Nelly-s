@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Pastelería Nelly</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8e1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #ff5e57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        .cart-container {
+            flex: 1;
+            padding: 20px;
+            padding-bottom: 100px; /* Espacio para el contenedor de pago */
+            overflow-y: auto; /* Hacer que el contenido sea desplazable */
+        }
+
+        .back-button {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ff5e57;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #ff785a;
+        }
+
+        .cart-items-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            perspective: 1000px; /* Perspectiva 3D para el contenedor de los productos */
+        }
+
+        .cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transform-style: preserve-3d; /* Preservar el estilo 3D de los hijos */
+            transform: rotateY(-15deg); /* Rotar el contenedor para el efecto 3D */
+            transition: transform 0.5s ease;
+        }
+
+        .cart-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin: 0;
+            background-color: #fff3e0;
+            border-radius: 5px;
+            position: relative;
+            transform: rotateY(0deg); /* Ajustar para el efecto 3D */
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            width: 200px;
+        }
+
+        .cart-item:hover {
+            transform: rotateY(10deg); /* Efecto 3D al pasar el ratón */
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .cart-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .cart-item p {
+            margin: 0;
+            font-size: 1.1em;
+            color: #ff5e57;
+        }
+
+        .remove-btn {
+            background-color: #ff5e57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .remove-btn:hover {
+            background-color: #ff785a;
+        }
+
+        .ratings {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .rating-star {
+            color: gold;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .rating-star.selected {
+            color: orange;
+        }
+
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff8e1;
+            padding: 20px;
+            border-top: 2px solid #ff5e57;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+        }
+
+        .fixed-footer .total-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff5e57;
+        }
+
+        .fixed-footer .checkout,
+        .fixed-footer .back-button {
+            padding: 15px;
+            background-color: #ff5e57;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .fixed-footer .checkout:hover,
+        .fixed-footer .back-button:hover {
+            background-color: #ff785a;
+        }
+
+        .fixed-footer .back-button {
+            background-color: #ff785a; /* Color diferente para el botón de volver */
+        }
+
+        .recommendation {
+            display: none;
+            padding: 20px;
+            background-color: #fff3e0;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .recommendation img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        .recommendation h2 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Carrito de Compras</h1>
+    </header>
+
+    <div class="cart-container">
+        <button onclick="window.location.href='buscador.html'" class="back-button">Volver al Buscador</button>
+
+        <div class="cart-items-container">
+            <ul class="cart-items" id="cart-items">
+                <!-- Los productos del carrito se agregarán aquí -->
+            </ul>
+        </div>
+
+        <div class="recommendation" id="recommendation">
+            <h2>Recomendaciones del Chef</h2>
+            <img src="" alt="Producto Recomendado" id="recommendation-image">
+            <p id="recommendation-name"></p>
+            <p id="recommendation-price"></p>
+        </div>
+    </div>
+
+    <div class="fixed-footer">
+        <button class="back-button" onclick="window.location.href='buscador.html'">Volver al Buscador</button>
+        <div class="total-price" id="total-price">Total: $MXN 0</div>
+        <button class="checkout" onclick="proceedToPayment()">Pagar</button>
+    </div>
+
+    <script>
+        const products = [
+            { name: 'Pastel de Chocolate', price: 250, image: 'chocolate-cake.jpg' },
+            { name: 'Tarta de Frutas', price: 200, image: 'fruit-tart.jpg' },
+            { name: 'Galletas de Vainilla', price: 100, image: 'vanilla-cookies.jpg' },
+            { name: 'Brownies', price: 150, image: 'brownies.jpg' },
+            { name: 'Macarons', price: 180, image: 'macarons.jpg' }
+        ];
+
+        function loadCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+            const recommendationSection = document.getElementById('recommendation');
+            const recommendationImage = document.getElementById('recommendation-image');
+            const recommendationName = document.getElementById('recommendation-name');
+            const recommendationPrice = document.getElementById('recommendation-price');
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalPrice = 0;
+
+            cartItemsContainer.innerHTML = ''; // Limpiar el contenedor
+
+            if (cart.length === 0) {
+                // Mostrar recomendación aleatoria si el carrito está vacío
+                const randomProduct = products[Math.floor(Math.random() * products.length)];
+                recommendationImage.src = randomProduct.image;
+                recommendationName.textContent = randomProduct.name;
+                recommendationPrice.textContent = `$${randomProduct.price.toFixed(2)}`;
+                recommendationSection.style.display = 'block';
+            } else {
+                recommendationSection.style.display = 'none';
+            }
+
+            cart.forEach((product, index) => {
+                const cartItem = document.createElement('li');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>$${product.price.toFixed(2)}</p>
+                    <div class="ratings" id="ratings-${index}">
+                        ${renderStars(product.rating, index)}
+                    </div>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Eliminar</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+
+                // Calcular el precio total
+                const price = parseFloat(product.price);
+                totalPrice += price;
+            });
+
+            totalPriceElement.textContent = `Total: $MXN ${totalPrice.toFixed(2)}`;
+        }
+
+        function renderStars(rating, index) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<span class="rating-star ${i <= rating ? 'selected' : ''}" onclick="rateProduct(${index}, ${i})">★</span>`;
+            }
+            return stars;
+        }
+
+        function rateProduct(index, rating) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart[index]) {
+                cart[index].rating = rating;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart(); // Actualizar la vista del carrito
+            }
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1); // Eliminar el producto del carrito
+
+            localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado
+            loadCart(); // Actualizar la vista del carrito
+        }
+
+        function proceedToPayment() {
+            // Aquí iría la lógica para proceder al pago
+            alert('Procediendo al pago...');
+        }
+
+        window.onload = function() {
+            loadCart();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Nelly</title>
+    <!-- Vincula el archivo CSS externo -->
+    <link rel="stylesheet" href="CSS/pasteles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf2f2;
+        }
+
+        header {
+            background-color: #ff5e57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #ff785a;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ffab91;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        /* Estilos del icono de búsqueda */
+        .search-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .search-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos del carrito de compras */
+        .cart {
+            font-size: 1.5em;
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .cart:hover {
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background-image: url('https://as1.ftcdn.net/v2/jpg/02/72/26/76/1000_F_272267692_PKz9gseQsPguoAJPiaAIC0SBi7YtkL2z.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin: 0; /* Eliminar espacio */
+        }
+
+        .hero h2 {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        /* Sección del menú */
+        .menu-section {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ff785a;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0; /* Eliminar espacio */
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item h3 {
+            font-size: 1em;
+            color: white;
+            margin: 0;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Sección de categorías */
+        .category-section {
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            background-color: #ffffff;
+        }
+
+        /* Estilos específicos para cada categoría */
+        .category-pasteles {
+            background-color: #ff5e57; /* Rojo para Pasteles */
+            border: 1px solid #ff5e57;
+        }
+
+        .category-gelatinas {
+            background-color: #b0bec5; /* Gris azulado para Gelatinas */
+            border: 1px solid #b0bec5;
+        }
+
+        .category-lo-nuevo {
+            background-color: #ffcc80; /* Naranja claro para Lo Nuevo */
+            border: 1px solid #ffcc80;
+        }
+
+        .category-helado {
+            background-color: #81c784; /* Verde menta para Helado Italiano */
+            border: 1px solid #81c784;
+        }
+
+        .category-cafe {
+            background-color: #d7ccc8; /* Beige para Café Molido */
+            border: 1px solid #d7ccc8;
+        }
+
+        .category-galletas {
+            background-color: #ffab91; /* Naranja pastel para Galletas y Biscotties */
+            border: 1px solid #ffab91;
+        }
+
+        .category-section h2 {
+            color: #333; /* Color del texto de los títulos en categorías */
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .category-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .category-section p {
+            color: #333; /* Color del texto descriptivo */
+            font-size: 1em;
+        }
+
+        /* Sección de especiales del mes */
+        .specials-section {
+            background-color: #ffcc80; /* Naranja claro para los especiales */
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .specials-section h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .specials-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .specials-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            text-align: center;
+            width: 200px; /* Ajusta el ancho según sea necesario */
+        }
+
+        .specials-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .specials-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .specials-item p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        /* Sección del footer */
+        footer {
+            background-color: #ff785a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Galería de imágenes */
+        .gallery {
+            max-width: 100%;
+            margin: 50px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para los botones de agregar al carrito */
+        .specials-item button {
+            background-color: #ff5e57;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .specials-item button:hover {
+            background-color: #ff785a;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pastelería Nelly</h1>
+        <p>Un sabor inolvidable para cada ocasión</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Productos</a>
+            <a href="#">Contacto</a>
+        </div>
+
+        <!-- Icono de búsqueda -->
+        <a href="HTML/buscador.html">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/385/752/non_2x/magnifying-glass-sign-search-icon-free-png.png" alt="Buscar" class="search-icon">
+        </a>
+
+        <!-- Carrito de compras -->
+        <a href="HTML/carrito.html" class="cart">🛒</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Bienvenidos a Pastelería Nelly</h2>
+    </section>
+
+    <section id="pasteles-section">
+        <div class="menu-section">
+            <div class="menu-item category-lo-nuevo">
+                <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-17-icono.png" alt="Lo Nuevo">
+                <h3>Lo Nuevo</h3>
+            </div>
+            <div class="menu-item category-pasteles">
+                <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-7-icono.png" alt="Pasteles">
+                <h3>Pasteles</h3>
+            </div>
+            <div class="menu-item category-gelatinas">
+                <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-9-icono.png" alt="Gelatinas">
+                <h3>Gelatinas</h3>
+            </div>
+            <div class="menu-item category-helado">
+                <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-12-icono.png" alt="Helado Italiano">
+                <h3>Helado Italiano</h3>
+            </div>
+            <div class="menu-item category-cafe">
+                <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-13-icono.png" alt="Café Molido">
+                <h3>Café Molido</h3>
+            </div>
+            <div class="menu-item category-galletas">
+                <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-15-icono.png" alt="Galletas y Biscotties">
+                <h3>Galletas y Biscotties</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-nosotros">
+        <div class="category-section category-pasteles">
+            <h2>Sobre Nosotros</h2>
+            <p>En Pastelería Nelly, cada dulce es una obra de arte hecha con amor. Desde que nuestra abuela comenzó con sus recetas secretas, hemos estado endulzando la vida de nuestros clientes con pasteles, pan y más.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Especiales del Mes -->
+    <section id="especiales-del-mes">
+        <div class="specials-section">
+            <h2>Especiales del Mes</h2>
+            <div class="specials-container">
+                <div class="specials-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAM21N8xb7HUFy4FRLd9xxErt6JqP7Hnb_OA&s" alt="Pastel de Zanahoria">
+                    <h3>Pastel de Zanahoria</h3>
+                    <p>350 pesos</p>
+                    <button onclick="agregarAlCarrito('Pastel de Zanahoria', 350)">Agregar al carrito</button>
+                </div>
+                <div class="specials-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL6R00UNXi-GMF8tK3cqfypmCO0jgW8bXBug&s" alt="Pan de Plátano">
+                    <h3>Pan de Plátano</h3>
+                    <p>300 pesos</p>
+                    <button onclick="agregarAlCarrito('Pan de Plátano', 300)">Agregar al carrito</button>
+                </div>
+                <div class="specials-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS65u7TsXILouy-mO2fydC9VSstO4M1uPB3_w&s" alt="Pan de Elote">
+                    <h3>Pan de Elote</h3>
+                    <p>250 pesos</p>
+                    <button onclick="agregarAlCarrito('Pan de Elote', 250)">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Pastelería Nelly. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function agregarAlCarrito(nombreProducto, precioProducto) {
+            // Aquí puedes agregar la lógica para añadir el producto al carrito
+            console.log(`Producto agregado: ${nombreProducto}, Precio: ${precioProducto}`);
+            alert(`Has agregado ${nombreProducto} al carrito por ${precioProducto} pesos.`);
+        }
+    </script>
+
+</body>
+</html>
