@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Nelly - Contacto</title>
+    <!-- Vincula el archivo CSS externo -->
+    <link rel="stylesheet" href="CSS/pasteles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf2f2;
+        }
+
+        header {
+            background-color: #ff5e57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #ff785a;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ffab91;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        .search-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .search-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Carrito de compras con imagen ajustada */
+        .cart {
+            font-size: 1.5em;
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .cart img {
+            width: 40px; /* Tamaño ajustado */
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .cart img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Sección de contacto */
+        .contact-section {
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #ff5e57;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .contact-info p {
+            margin: 0 0 10px 0;
+        }
+
+        /* Mapa centrado */
+        #mapa {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        iframe {
+            border: 0;
+            width: 80%;
+            height: 450px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        footer {
+            background-color: #ff785a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pastelería Nelly</h1>
+        <p>Un sabor inolvidable para cada ocasión</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../HTML/nosotros.html">Nosotros</a>
+            <a href="../HTML/productos.html">Productos</a>
+            <a href="../HTML/contacto.html">Contacto</a>
+        </div>
+
+        <!-- Icono de búsqueda -->
+        <a href="HTML/buscador.html">
+            <img src="https://cdn-icons-png.freepik.com/512/13/13311.png" alt="Buscar" class="search-icon">
+        </a>
+
+        <!-- Carrito de compras con imagen ajustada -->
+        <a href="HTML/carrito.html" class="cart">
+            <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito de compras">
+        </a>
+
+    </nav>
+
+    <!-- Sección de contacto -->
+    <section class="contact-section">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <h3>¿Cómo llegar?</h3>
+            <p>Nos encontramos en una ubicación privilegiada en el centro de la ciudad. Si deseas visitarnos, es fácil llegar desde cualquier punto, ya que estamos cerca de varias estaciones de transporte público y contamos con amplias opciones de estacionamiento. Estamos ubicados en la Avenida Principal, justo frente al parque central.</p>
+            <p>Horario de atención: Lunes a Sábado de 8:00 AM a 8:00 PM</p>
+
+            <h3>Teléfono</h3>
+            <p>¿Prefieres llamarnos? Nuestro número de atención al cliente es <strong>+52 55 1234 5678</strong>. Estaremos encantados de atenderte y resolver cualquier duda o tomar tus pedidos.</p>
+            <p>Si prefieres enviar un mensaje, también puedes hacerlo a través de WhatsApp al mismo número, y te responderemos lo antes posible.</p>
+
+            <h3>Email</h3>
+            <p>Para consultas más detalladas, puedes escribirnos a nuestro correo electrónico: <strong>contacto@pastelerianelly.com</strong>. Nos comprometemos a responderte dentro de las 24 horas hábiles, ya sea para dudas generales o para más información sobre nuestros productos y servicios.</p>
+            <p>También puedes suscribirte a nuestro boletín para recibir promociones y novedades directamente en tu correo.</p>
+
+            <h3>Redes Sociales</h3>
+            <p>Sigue nuestras redes sociales para conocer nuestras últimas ofertas, productos especiales y noticias:</p>
+            <ul>
+                <li><strong>Facebook:</strong> Pastelería Nelly</li>
+                <li><strong>Instagram:</strong> @pastelerianelly</li>
+                <li><strong>Twitter:</strong> @PasteleriaNelly</li>
+            </ul>
+            <p>Nos encantaría ver tus fotos con nuestros productos. Usa el hashtag #SaborNelly para que podamos compartir tu experiencia.</p>
+
+            <h3>¿Tienes alguna pregunta?</h3>
+            <p>Si tienes dudas sobre cualquier aspecto relacionado con nuestros productos o servicios, no dudes en contactarnos. Nuestro equipo está siempre disponible para ayudarte y garantizar que tu experiencia con nosotros sea la mejor posible.</p>
+        </div>
+    </section>
+
+    <!-- Sección de mapa -->
+    <section id="mapa">
+        <h2>Encuéntranos</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3390.7085593287884!2d-116.59729952394359!3d31.805691832989247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d88e3a8c83f15b%3A0xf2bda7a9596864a7!2sCBTis%2041!5e0!3m2!1ses!2smx!4v1729708125539!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <p>© 2024 Pastelería Nelly. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+

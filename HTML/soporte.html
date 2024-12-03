@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interactivo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 3px solid #ff785a;
+        }
+
+        .chat-header {
+            background-color: #ff785a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            max-width: 80%;
+            padding: 10px;
+            background-color: #ff5e57;
+            border-radius: 10px;
+            color: white;
+            word-wrap: break-word;
+            margin-bottom: 15px;
+        }
+
+        .message.bot {
+            background-color: #ff785a;
+            align-self: flex-start;
+        }
+
+        .message.user {
+            background-color: #4CAF50;
+            align-self: flex-end;
+        }
+
+        .chat-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .chat-buttons button {
+            background-color: #ff5e57;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .chat-buttons button:hover {
+            background-color: #ff785a;
+            transform: scale(1.05);
+        }
+
+        .chat-buttons button:active {
+            background-color: #ff3d2a;
+        }
+
+        .chat-footer {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #ff785a;
+        }
+
+        .chat-footer p {
+            color: white;
+            font-size: 1.2em;
+        }
+
+        /* Animación de mensajes */
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message {
+            animation: appear 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            Asistente Virtual
+        </div>
+
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">Hola, ¿En qué te puedo ayudar hoy?</div>
+        </div>
+
+        <div class="chat-buttons" id="chat-buttons">
+            <button onclick="userResponse('¿Qué productos ofreces?')">¿Qué productos ofreces?</button>
+            <button onclick="userResponse('¿Cómo puedo contactar?')">¿Cómo puedo contactar?</button>
+            <button onclick="userResponse('¿Cuál es el precio de un pastel?')">¿Cuál es el precio de un pastel?</button>
+            <button onclick="userResponse('¿Tienes ofertas especiales?')">¿Tienes ofertas especiales?</button>
+            <button onclick="userResponse('¿Dónde estás ubicado?')">¿Dónde estás ubicado?</button>
+        </div>
+
+        <div class="chat-footer">
+            <p>Powered by Pastelería Nelly</p>
+        </div>
+    </div>
+
+    <script>
+        const chatBody = document.getElementById('chat-body');
+        const chatButtons = document.getElementById('chat-buttons');
+
+        const respuestas = {
+            "¿Qué productos ofreces?": "Ofrecemos una variedad de pasteles, panadería, galletas, gelatinas, helados italianos y más. ¡Todo hecho con los mejores ingredientes!",
+            "¿Cómo puedo contactar?": "Puedes contactarnos a través de nuestro número de teléfono o por mensaje directo en nuestras redes sociales.",
+            "¿Cuál es el precio de un pastel?": "Los precios de nuestros pasteles varían según el tamaño y el tipo. Por ejemplo, un pastel de zanahoria cuesta 350 pesos.",
+            "¿Tienes ofertas especiales?": "Sí, tenemos ofertas especiales durante todo el año. Te invitamos a visitar nuestra página para más detalles sobre promociones actuales.",
+            "¿Dónde estás ubicado?": "Nos encontramos en el centro de la ciudad, cerca de la Plaza Principal. ¡Te esperamos con los brazos abiertos!"
+        };
+
+        function userResponse(question) {
+            // Agregar mensaje del usuario
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = question;
+            chatBody.appendChild(userMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;  // Desplazar al último mensaje
+
+            // Eliminar botones después de selección
+            chatButtons.innerHTML = '';
+
+            // Agregar respuesta del bot basada en la pregunta seleccionada
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('message', 'bot');
+                botMessage.textContent = respuestas[question] || "Lo siento, no entendí tu pregunta.";
+                chatBody.appendChild(botMessage);
+                chatBody.scrollTop = chatBody.scrollHeight;  // Desplazar al último mensaje
+
+                // Mostrar nuevamente los botones
+                setTimeout(() => {
+                    chatButtons.innerHTML = `
+                        <button onclick="userResponse('¿Qué productos ofreces?')">¿Qué productos ofreces?</button>
+                        <button onclick="userResponse('¿Cómo puedo contactar?')">¿Cómo puedo contactar?</button>
+                        <button onclick="userResponse('¿Cuál es el precio de un pastel?')">¿Cuál es el precio de un pastel?</button>
+                        <button onclick="userResponse('¿Tienes ofertas especiales?')">¿Tienes ofertas especiales?</button>
+                        <button onclick="userResponse('¿Dónde estás ubicado?')">¿Dónde estás ubicado?</button>
+                    `;
+                }, 1000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

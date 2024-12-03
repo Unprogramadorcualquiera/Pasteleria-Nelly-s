@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Pastelería Nelly</title>
+    <link rel="stylesheet" href="CSS/pasteles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf2f2;
+        }
+
+        header {
+            background-color: #ff5e57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #ff785a;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ffab91;
+            border-radius: 5px;
+            transform: scale(1.05);
+        }
+
+        .search-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .search-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart {
+            font-size: 1.5em;
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .cart:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilo de las categorías */
+        #categorias {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .category {
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: scale(1.05);
+        }
+
+        .category img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .category h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .category .btn {
+            display: inline-block;
+            background-color: #ff5e57;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .category .btn:hover {
+            background-color: #ff785a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #ff785a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pastelería Nelly</h1>
+        <p>Un sabor inolvidable para cada ocasión</p>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="../index.html">Inicio</a>
+            <a href="../HTML/nosotros.html
+">Nosotros</a>
+            <a href="HTML/productos.html">Productos</a>
+            <a href="../HTML/contacto.html">Contacto</a>
+        </div>
+
+        <a href="HTML/buscador.html">
+            <img src="https://cdn-icons-png.freepik.com/512/13/13311.png" alt="Buscar" class="search-icon">
+        </a>
+
+        <a href="HTML/carrito.html" class="cart">
+            <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito de compras" style="width: 30px; height: 30px;">
+        </a>
+    </nav>
+
+    <section id="categorias">
+        <!-- Categoría Lo Nuevo -->
+        <div class="category">
+            <h3>Lo Nuevo</h3>
+            <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-17-icono.png" alt="Lo Nuevo">
+            <a href="../HTMLP/nuevo.html" class="btn">Ver Productos</a>
+        </div>
+
+        <!-- Categoría Pasteles -->
+        <div class="category">
+            <h3>Pasteles</h3>
+            <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-7-icono.png" alt="Pasteles">
+            <a href="../HTMLP/pasteleslista.html" class="btn">Ver Productos</a>
+        </div>
+
+        <!-- Categoría Gelatinas -->
+        <div class="category">
+            <h3>Gelatinas</h3>
+            <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-9-icono.png" alt="Gelatinas">
+            <a href="../HTMLP/gelatinas.html" class="btn">Ver Productos</a>
+        </div>
+
+        <!-- Categoría Helado Italiano -->
+        <div class="category">
+            <h3>Helado Italiano</h3>
+            <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-12-icono.png" alt="Helado Italiano">
+            <a href="../HTMLP/helado.html" class="btn">Ver Productos</a>
+        </div>
+
+        <!-- Categoría Café Molido -->
+        <div class="category">
+            <h3>Café Molido</h3>
+            <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-13-icono.png" alt="Café Molido">
+            <a href="../HTMLP/cafe.html" class="btn">Ver Productos</a>
+        </div>
+
+        <!-- Categoría Galletas y Biscotties -->
+        <div class="category">
+            <h3>Galletas y Biscotties</h3>
+            <img src="https://www.pasteleriaok.com.mx/img/catalogo/categorias/categoria-15-icono.png" alt="Galletas y Biscotties">
+            <a href="../HTMLP/galletas.html" class="btn">Ver Productos</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Pastelería Nelly. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

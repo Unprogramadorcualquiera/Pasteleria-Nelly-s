@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastel Carlos V - Tienda en Línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff785a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .cart-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .cart-icon-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #fff;
+            color: #ff785a;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 50%;
+            border: 2px solid #ff785a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product-details {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .product-details h2 {
+            margin-bottom: 0.5rem;
+            color: #ff785a;
+        }
+
+        .product-details p {
+            margin: 0.5rem 0;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .rating span {
+            font-size: 2rem;
+            color: gray;
+            cursor: pointer;
+        }
+
+        .rating span.active {
+            color: gold;
+        }
+
+        .comments {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .comments h3 {
+            margin-top: 0;
+            color: #ff785a;
+        }
+
+        .comments textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .comments button {
+            background-color: #ff785a;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comments button:hover {
+            background-color: #ff5733;
+        }
+
+        .comments ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .comments ul li {
+            background-color: #f1f1f1;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .actions button {
+            background-color: #ff785a;
+            border: none;
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .actions button:hover {
+            background-color: #ff5733;
+        }
+
+        .recommendations {
+            margin-top: 2rem;
+        }
+
+        .recommendations h3 {
+            color: #ff785a;
+        }
+
+        .recommendations .product-card {
+            display: inline-block;
+            width: calc(33.33% - 1rem);
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .recommendations .product-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .recommendations .product-card h4 {
+            margin: 0.5rem 0;
+            color: #333;
+        }
+
+        .recommendations .product-card button {
+            background-color: #ff785a;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .recommendations .product-card button:hover {
+            background-color: #ff5733;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pastel Carlos V</h1>
+        <div class="cart-icon-container">
+            <span class="cart-count" id="cartCount">0</span>
+            <a href="../HTML/carrito.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito" class="cart-icon">
+            </a>
+        </div>
+    </header>
+    <main class="container">
+        <!-- Producto Principal -->
+        <section class="product">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcHa_8-mLmw46ugl2yk-sNJExfSbcFe4VBs3cM_9YM__na3ayHM4GsYl_vDh1B5JBZyJ5vyBK8-gvpVJJfxvdPpPTGGY6KNUmlLsh_qNHAsM9-k-4uts9b_5GYwPRhqYdS1pu3sxQ?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Carlos V">
+            <div class="product-details">
+                <h2>Pastel Carlos V®</h2>
+                <p>Categoría: Chocolates</p>
+                <p>Disfruta el exquisito sabor del chocolate Carlos V combinado con un suave betún de queso crema.</p>
+            </div>
+            <div class="rating">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+            <div class="actions">
+                <button id="addToCart">Añadir al carrito</button>
+                <button id="buyNow">Comprar ahora</button>
+            </div>
+        </section>
+
+        <!-- Sección de Comentarios -->
+        <section class="comments">
+            <h3>Comentarios</h3>
+            <textarea id="commentInput" placeholder="Escribe tu comentario aquí..."></textarea>
+            <button id="addComment">Añadir comentario</button>
+            <ul id="commentList"></ul>
+        </section>
+
+        <!-- Sección de Recomendaciones -->
+        <section class="recommendations">
+            <h3>Productos recomendados</h3>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" alt="Producto 1">
+                <h4>Producto 1</h4>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" alt="Producto 2">
+                <h4>Producto 2</h4>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" alt="Producto 3">
+                <h4>Producto 3</h4>
+                <button>Añadir al carrito</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Calificación dinámica
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => {
+                document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+                star.classList.add('active');
+            });
+        });
+
+        // Agregar comentarios
+        const commentList = document.getElementById('commentList');
+        const commentInput = document.getElementById('commentInput');
+        const addCommentButton = document.getElementById('addComment');
+        
+        addCommentButton.addEventListener('click', () => {
+            const comment = commentInput.value.trim();
+            if (comment) {
+                const newComment = document.createElement('li');
+                newComment.textContent = comment;
+                commentList.appendChild(newComment);
+                commentInput.value = ''; // Limpiar el campo
+            }
+        });
+
+        // Actualizar contador del carrito
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        // Agregar al carrito
+        document.getElementById('addToCart').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const product = {
+                id: 'pastelCarlosV',
+                name: 'Pastel Carlos V',
+                price: 250,
+                quantity: 1
+            };
+
+            const existingProduct = cart.find(item => item.id === product.id);
+            if (existingProduct) {
+                existingProduct.quantity++;  // Si ya está en el carrito, aumentar la cantidad
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert('Producto añadido al carrito');
+        });
+
+        // Actualizar contador inicial
+        updateCartCount();
+    </script>
+</body>
+</html>
+

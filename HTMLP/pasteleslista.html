@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pasteles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8f3;
+            color: #333;
+        }
+        header {
+            background-color: #ff785a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.03);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+        .product-category {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .product-card button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff785a;
+            color: #fff;
+            border: none;
+            border-radius: 0 0 8px 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .product-card button:hover {
+            background-color: #e6674f;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="registro.html" style="position: absolute; top: 10px; left: 10px;">
+    <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" alt="Registro" style="width: 40px; height: 40px; cursor: pointer;">
+</a>
+
+        <h1>Lista de Pasteles</h1>
+    </header>
+    <main class="container">
+        <!-- Aquí se incluye la lista de pasteles -->
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcHa_8-mLmw46ugl2yk-sNJExfSbcFe4VBs3cM_9YM__na3ayHM4GsYl_vDh1B5JBZyJ5vyBK8-gvpVJJfxvdPpPTGGY6KNUmlLsh_qNHAsM9-k-4uts9b_5GYwPRhqYdS1pu3sxQ?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Carlos V®" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Carlos V®</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Experimenta el delicioso sabor del chocolate con nuestro Pastel Carlos V, cubierto con un irresistible betún de queso y chocolate Carlos V.</p>
+                <a href="pastelcarlosv.html"><button>Ver Más</button></a>
+
+            </div>
+     
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdIIiC-S8OYTC48QCby6DktEX7xzxG-rO8iGMOctTDqIeVdEEO5dR46Lp0LG52DDS9jSH8FV5dTrk_g-6LVPnzlXHoGs2jYf5ZoRf56h2XVFtQ77VqGukM58fl2RSMJAPM-_3X4iQ?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel 3 Leches C/Fresas" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel 3 Leches C/Fresas</h3>
+                <p class="product-category">Categoría: Tres Leches</p>
+                <p class="product-description">Sumérgete en la suavidad de nuestro Pastel 3 Leches con fresas. Con pan de vainilla empapado en tres leches, cubierto con crema sabor nata y frescas fresas.</p>
+                <a href="pastellechefresas.html"><button>Ver Más</button></a>
+
+            </div>
+            
+        </div>
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXek10Wp1Yo_-Hy7kQ_NG0z0esPB4wOfYiiEIvZbO0aF0A5fJoYbHGmyENcJFcbpOEcDvkrANZJ3qROxQAWVvFATgRG-6to-gmttOTrgrR6Y_8s9bh-bTvsaeRBxwEkMqLpwLt8aeg?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Tentacion De Fresa" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Tentación De Fresa</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Disfruta de nuestro Pastel Tentación De Fresa de 3 Leches de vainilla, cubierto con un delicioso betún de queso y decorado con fresas frescas.</p>
+                <a href="pasteltentacionfresa.html"><button>Ver Más</button></a>
+
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://www.pastelerialety.com/on/demandware.static/-/Sites-pastelerialety/default/dw643afe54/Fotos%20Pasteleria%20Lety/pastel3lechescombinadogde_1.jpg" alt="Pastel 3 Leches Combinado" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel 3 Leches Combinado</h3>
+                <p class="product-category">Categoría: Tres Leches</p>
+                <p class="product-description">Sumérgete en la suavidad de nuestro Pastel 3 Leches de vainilla, enriquecido con crema nata, frescas fresas y jugosa piña.</p>
+                <a href="pastellechescombinado.html"><button>Ver Más</button></a>
+
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfboQ1cb7ukafaT8H2rl2uJwuMVAietn5sz5b8GT_hNngPz3CUgvMiwpBt4DKFEnU5DHRGf-vk6z3ojrmQ9U2RKSp4mQj8qM_woa2RIgC_CmsIcxCKT5GXoj1N_CPFSq3PuOiK4?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Tentación De Frutas" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Tentación De Frutas</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Pastel 3 Leches vainilla con betún de queso y frutas.</p>
+                <a href="pasteltentacionfrutas.html"><button>Ver Más</button></a>
+
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc44ic06a7WP6wdnGO8ptmhF6cX_aEOLjyKH1iXW4wnFTy9YNabvdIEl9Rh8DnluEBoGRlvhid86FL2hgzmB4afUPqpfLWdVi4VffRnxsJ1Sd3EImhn9QljRAEobrDhqqPn0Ngqig?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Rollo De Mango" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Rollo De Mango</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Pastel vainilla con betún de queso y mango.</p>
+                <a href="pastelrollomango.html"><button>Ver Más</button></a>
+            </div>
+                  </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfr5btNJw2K_OvJKCvNzkpimfgsrKBP_eoIcPpOWlwNgetvPQQpTkNf5s1DJlz5QKCxpVfWnW8WlLZpUudf9lXujpsIEmIBGXF9yBH1lJwj1mIAej3ArzLnuUJXgezl8_q9wliavg?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Tentación De Mango" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Tentación De Mango</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Pastel 3 Leches vainilla con betún de queso y mango.</p>
+                <a href="pasteltentacionmango.html"><button>Ver Más</button></a>
+            </div>
+          
+        </div>
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdtoNrgVQtboF-ulmnC099ormAAG-Eza19pD7sJjU3GWDgtiD4KFV0VsibOTDwByPJMeEvu1ERQOponjIJCLWn1D6ts6GmFQBjyn3Gxwbk90f60XajT3yA23lN4VZQOVAX4fyJWeA?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Tipó Milky Way®" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Tipo Milky Way®</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Pastel chocolate con betún de queso, ganache Milkyway® y nuez.</p>
+                <a href="pastelmilkyway.html"><button>Ver Más</button></a>
+            </div>
+      
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXczm16giq_TiW0NgZy_r-u1NUPaXL0Oq_zAT1fTSAr0DBBov_VaW-MKu9ADzpj8hykvTdWbRZ3QrVS5IcQtAqCHk4ADS9SYrxfIdISZtSOKCzDb8FWkmZLy2SGHYj84FDb53vebug?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Tentación Combinado" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Tentación Combinado</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Pastel 3 Leches vainilla con betún de queso, mango y fresas.</p>
+                 <a href="pasteltentacioncombinado.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdGtAiHzrOh5WqDrnO3fOFlblaghXp8_A--6oI64I9SdXR7dZJg5Gg6vA0HsYuXR7986-_FXq_PF07Sc2jFAvsUZIoudmBHoLZf8FQxEdEMXv8n2b-X1h0HTfxVT78TPY6U1SQ8?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nevado de OREO®" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nevado de OREO®</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">El Pastel Nevado de OREO® es un auténtico deleite para los amantes de las galletas OREO®. Cada rebanada combina la textura crujiente de las galletas con la suavidad del pastel.</p>
+                 <a href="pastelnevado.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXezj3R11g1CVtQMbS6pp_300EKEkhJp4dcyfi6qBCu_pYBpMFXuEfhR58eTfKZeZA9Pqox6c2oP3zKbYDcjvpFxCtN6p-Q-dM3RqzYDLC1qpiOVV9KrmgK2N3sRfvvtIJOIGIO_Tw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel en Rollo De Cajeta Ch" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel en rollo De Cajeta Ch</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Experimenta la delicia de nuestro Pastel en rollo De Cajeta Ch de Pastelería Lety. El sabor tradicional de la cajeta se une a la calidad artesanal que nos distingue.</p>
+                 <a href="pastelrollocajeta.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdVMG32Bx5NQFdxvE-0n7Prlg9fkX0s49HylHbJTcmP59CxT1Lm3fXc_42OIR4M4ARosei5EBuaOY2lmYSJJbk3YeqLTcvI7oQLDWYebspNoIO2RVqpC2hiP2WnA1L9C1SWAA1V9w?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nevado de Mango" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nevado de Mango</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">Con nuestro Pastel Nevado de Mango descubre el paraíso de mango: pastel con base de galleta de vainilla, nieve sabor mango, relleno de salsa de mango y cuadritos de mango.</p>
+                 <a href="pastelnevadomango.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXebOGlecP3yg7zfct4CaygAWdgaUKdyPi1VkTSf5gq3MwpijZThIBH52nUdPHdeCDeL5dnuPpl2Jl7pfGvKfE7eHXlnpjg6QmF717Q0E_KLNAIE2nhJCNqPCYo7pU25hqJz3kVKbg?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Villamora" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Villamora</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Pan vainilla con blueberry ligeramente humectado con jarabe de limón, relleno con mermelada de frutos rojos y betún de tentación.</p>
+                 <a href="pastelvillamora.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdhxsO2YUYeEZ8smGfJYeKgIrZV0eMBKom_N4DflZoDCGxsZpcNH7s0MWbsC1XWmRcSYhnDClLp-2OCUyvI8_pY3Ytx_cBH3hnuXefhnkjNn331GcDeyBDyLshbnkPTwusXj8RhIA?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Selva Negra" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Selva Negra</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Clásico pastel Selva Negra con un toque único de la casa. Una experiencia llena de chocolate y cerezas.</p>
+                 <a href="pastelselvanegra.html"><button>Ver Más</button></a>
+            </div>
+         
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc5zHgHmE25lLA_ZR95W41Uz0Oo_tnVTeLqiMTCJfsutfA6FUTcMv0kamGjepFTNADrPGNYvf-cnZagDU8wh9fSi3Qh5gbrkc_-niA96PeJvKv7lfXh4e78dpg4F5WWnNWmoavbsw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Bambino Tentación De Fresa" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Bambino Tentación De Fresa</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Un pastel pequeño pero lleno de sabor: vainilla, fresas y betún de queso. Ideal para cualquier ocasión especial.</p>
+                 <a href="pastelbambinotentacion.html"><button>Ver Más</button></a>
+            </div>
+          
+        </div>
+        <div class="product-card">
+          <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcH7lbaELpcs3YfvsdPbwqlvJYZEtQMp-2BqD4NoHGnRQQMQmAlpr9nrIIHECV8-RqwySxyy7htIL7FUO9DSSB1EvcfUnrlr8wCkttz7X9bqu6KlFD8HM9n4rx_zGa0b4qasqh_VA?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Chocolate Claro" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Chocolate Claro</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Pastel con un delicado pan de chocolate claro, cubierto con un suave betún de chocolate y decorado con ralladura de chocolate blanco.</p>
+                 <a href="pastelchocolateclaro.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+          <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdzbsoP5aVLo82C8DWjvewFzNOnS3XiMz8Ov28FfkErukvM4ERnwn82S8oTTQSJceM97XrbhLriWNWk7HtK1xYV2cMty4BxupKAJ3EE6gZl77eM3utxtQfayepnKC9DtbhJPbeB?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Fresas Con Crema" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Fresas Con Crema</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Delicioso pastel con crema batida y fresas frescas, ideal para quienes aman lo clásico con un toque de frescura.</p>
+                 <a href="pastelfresascrema.html"><button>Ver Más</button></a>
+            </div>
+          
+        </div>
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcFSwzT8UXFIX-MhUIBd5BNxByPMMcP7weUrow6NGvkiLDs8Y2eYmNRNGqTZjG7WCvCiXcU8ZPbIQNLvy8B4a0sFs7jzym4iupmrvO3T50y8oK1tmFLfMOLtqbZWxfE3J6eqJLshw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Cubano" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Cubano</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Exquisito pastel de chocolate oscuro, decorado con crema de chocolate y trozos de nuez para un sabor inigualable.</p>
+                 <a href="pastelcubano.html"><button>Ver Más</button></a>
+            </div>
+                   </div>
+        <div class="product-card">
+         <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfKHK3h-DGUK9-FXfgs3LAzzIw60_2N_lkywKCDeHhOEtzAm53znmg0mojbpStGaRvwZ6bGgMtqgmtrvEofLC7K7Rg2hQM8Q-0Vccr_YLdcRnfUgb8ZaWnYpJjRho6p2OvaQw5waA?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Mechudo Chico" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Mechudo Chico</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Pastel con pan de vainilla relleno de crema, decorado con coco rallado y un toque de caramelo.</p>
+                 <a href="pastelmechudochico.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc9rWGyYrXRkBL6Y58lB25zQPtyF4HrMxXOphiuRRmi1yS4pAeEAy4vufF5D6KVfiqp4h7Rq-PLf_ItzuV_X2k-N6din6IW59mJVbZaEXnnETPtgu8p9Cp4YtZfXLaQmGjBOcpA7w?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Zebra" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Zebra</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Un pastel único con un diseño de rayas de chocolate y vainilla, ideal para celebraciones especiales.</p>
+                 <a href="pastelzebra.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdAcgIcT8RWj-PYbQsUnvBWW6nUwmR8cH2uY0hrSfEbsXUweFLH0CfvfqzfCP2zUWBvajwJ7kn9iECBNGON-M_MITVW4ho4S2zcilKLLLJARSO16plUIFGzxZMFu5xexMwsB-S9Fg?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Bambino Tentación De Mango" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Bambino Tentación De Mango</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Un delicioso pastel pequeño de 3 leches con mango fresco y un toque de queso crema en el betún.</p>
+                 <a href="pastelbambinotentacionmango.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd8mVh2xAccB8w60HAijBVtZrSAEzWWhYSPS9h6_ClAvM-7SHMtSjR3JLZE6fOddVHMs8aDolhVVXBv_qHnAKQg9vhrCD8u0z_b9vtQcRBtLWmUDK_G6OKzB7Dtza6KOFKd7PMO?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nuverry Med" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nuverry Med</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Pastel de chocolate con un relleno de frutos rojos y betún de crema de queso, decorado con nueces y ganache.</p>
+                 <a href="pastelnuverry.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeSeFAqkjFrOv-cvDR-00lheKMhxYb5P8y6o_nlEJ8bmc25XNyyTYMDyu-CyfpVgEX44ckMLpRY-UE4AeMXVuTIhQsqWB4EpmXcfMXMIVOTJUGeRj4LZlEZq5r6msm4MiXQNZ_29g?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel en rollo de Queso Con Frutos Rojos Ch" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel en rollo de Queso Con Frutos Rojos Ch</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Un suave pastel enrollado, relleno de queso crema y mermelada de frutos rojos, decorado con azúcar glass.</p>
+                 <a href="pastelquesofrutosrojos.html"><button>Ver Más</button></a>
+            </div>
+                 </div>
+        <div class="product-card">
+       <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcvQkDXrXdVqhvQcalktnQ1XUn6ehLZ3nzulf7aytn17RlPnhNymwwRR_DhHHnpIxyL1JS_vxjPKr1AyPO5NEieVxlzi1a4BiF1aAQsH6kj3TD1fVPzveJ_uQ7pDzGZYiTha4cAdw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nevado de Fresa" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nevado de Fresa</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">Un pastel fresco y suave con nieve de fresa, crema batida y trozos de fresa natural para un toque frutal.</p>
+                 <a href="pastelnevadofresa.html"><button>Ver Más</button></a>
+            </div>
+                   </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcpR2fTYYkVd_bVmdTmk8yK3P27-kY6fTH9yIg-XTz_lv5AvFb8VqRCjp4k9vTWWTa4trFNQcH1OTOV1WqnnE9i5AbUe052vkU_MJccK2GxVXryZojLSNHT3-n1R8P2av7_CuGkbA?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Zanahoria" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel De Zanahoria</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Un clásico pastel de zanahoria con especias, nueces y un delicioso betún de queso crema.</p>
+                 <a href="pastelzanahoria.html"><button>Ver Más</button></a>
+            </div>
+                   </div>
+        <div class="product-card">
+          <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeg2LxM9VHMZcXs64K3DMVAaofbFdAKp0fLt4dpw3PZd5DnmCjkcgn8YsvIWUJx4_KuYwhNTL430akLcFdN9zqXckz1mMUzGFx7crGXtb3_gUL8C1aB1eUirTQd9npPQc4MQ_m_bg?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Tentación Con Nutella®" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Tentación Con Nutella® Med</h3>
+                <p class="product-category">Categoría: Tentaciones 3 Leches</p>
+                <p class="product-description">Un exquisito pastel de vainilla con betún de queso y una generosa capa de Nutella® en cada rebanada.</p>
+                 <a href="pasteltentacionnutella.html"><button>Ver Más</button></a>
+            </div>
+                   </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfQ0J99rBkKlDV6n8BbGzZzy8nnp-p1XppgmmFiI821LOPe0KEYHsOdgv-ktRJjAe2tchdCQeG2daIEZwqZuw2E9LaidObZWTttXIBG1XfcIs4jAnHdnuJXJ3nij7F3YY6NPQTn5A?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Combinado" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Combinado</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Una fusión de sabores: chocolate, vainilla y fresas con un betún cremoso y decorado con frutas frescas.</p>
+                 <a href="pastelcombinado.html"><button>Ver Más</button></a>
+            </div>
+         
+        </div>
+        <div class="product-card">
+           <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXf0VJvs7W-UV2ldBKOpUl2OnKe0gHPmJ7mfYaCN3SahlafdGJLX4aPDh7NXfE-kErA9rQnR-8a6_G6dEBVYoNTCuSuxvaxiDCFSjIAGwewK35I8VK5RX2GVnVoXC-FrCcNU7uEO?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Bombon" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Bombón</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Un pastel de chocolate con relleno de malvavisco y cobertura de ganache de chocolate, decorado con mini bombones.</p>
+                 <a href="pastelbombon.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+        <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeg-2Oo0V14nrd-5EtphHSq6dAFVxZxwsQLMCymQXotf8zO8dBSC6NekuCz7-LBgOM2HmJxEJEPGaZkmAwX7B8NHVknQrHHuDexAO3J5kN3vpqNZYWGj_U2YvGv9u8MVTOM97zy-Q?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Cheesecake con Fresas" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Cheesecake con Fresas</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Clásico cheesecake sobre base de galleta, cubierto con fresas frescas y un toque de jarabe dulce.</p>
+                 <a href="cheesecakefresas.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc5fx13zG2DswFw6ybMqdOuAOdMI8iBG1YE5SyE4NGUmWY2U6gFGrpEF-vxShTDZRtlm11JNkfQAR3XG6C8VgJSJ0VStMsCrEnVvlBPds7DHT5hTztXy0K12-CGGRKeRFqerBzl4w?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nuevo Dominó" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nuevo Dominó</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Un pastel divertido y delicioso con combinaciones de chocolate y vainilla, ideal para todas las edades.</p>
+                 <a href="pasteldomino.html"><button>Ver Más</button></a>
+            </div>
+                   </div>
+        <div class="product-card">
+              <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfjTvRnWdOYLVkhFKv5M5L-V5ZAl743lPCXPGOXM6CThgafeva4bZ45WmL_lAxHTqgc0zdyowXwG5yDRVEOJxHaQLpdl_qkUyhEI_e4IJg8u1WatYhOreVoNGJoQTqGeRtQsDNKjQ?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel 4 Leches" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel 4 Leches</h3>
+                <p class="product-category">Categoría: Tres Leches</p>
+                <p class="product-description">Una versión mejorada del clásico 3 leches, con un toque adicional de leche condensada para mayor cremosidad.</p>
+                 <a href="pastelcuatroleches.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXetKUBzSO_UpR2nQ5RVhdUKA0wvYBqY3fzgS3QMNbCvIbU5xq94XbZbofA7lXjlmDxfyw1BKpPx13J7VabNZKREEFLaQRqU5HYYSgribEXNWgQ3b3tUNfCCabOCuxb4AH7g_8HV?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nevado Milkyway®" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nevado MilkyWay®</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">Un pastel único con ganache de chocolate MilkyWay® y nieve de vainilla, perfecto para los amantes del dulce.</p>
+                 <a href="pastelnevadomilkyway.html"><button>Ver Más</button></a>
+            </div>
+               </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXclN450-ZKq7FzJ72P98vpE3QuIdbKNIsguQ2fixXKNP4YrLrQdNr_3TPsUjwCb4QC_gi5TAcV0aHm6cY-UpF3jkgU-seK63omrEBIW6sLzNdlx9Mli3V_GDQbO6SItnZErEQ1y?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Nevado de Nuez" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Nevado de Nuez</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">Delicioso pastel con crema de nuez, decorado con trozos de nuez caramelizada y un toque de vainilla.</p>
+                 <a href="pastelnevadonuez.html"><button>Ver Más</button></a>
+            </div>
+    
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdKJWJmiOgrFJOfI_7axejx0KcJsb0YZR1wO-mW7hY6tDGtAkY5vO9YZvakDpVQYSvULpKC-kW5Yqro2WGTcduKecgDavRNxlLR-TnIDuXnPimxRCLclhnw5SLLL9dN66SXNjjcpw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Alemán" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Alemán</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Un pastel intenso de chocolate con relleno y cobertura de crema de chocolate y coco rallado.</p>
+                 <a href="pastelaleman.html"><button>Ver Más</button></a>
+            </div>
+         
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXesykKLa2uxfWVfmL0QAEB7U0XlC9hfpcrcTQ528J6ezhCG2i-ZWlRVzUpR8AgK5PYLy4VMFpCjIBljo8BdCSU0O8KXDazrJAZnYu6a9l24rmFIagogwtcQOdGK8atY9mGPksJHNw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel 3 Leches De Chocolate" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel 3 Leches De Chocolate</h3>
+                <p class="product-category">Categoría: Tres Leches</p>
+                <p class="product-description">Una versión chocolatosa del clásico 3 leches, con un pan de chocolate y crema de cacao.</p>
+                 <a href="pastellechechocolate.html"><button>Ver Más</button></a>
+            </div>
+        
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXedbl9e0mLOKNeXDAv5lF5knXbCDbS49XS3IMF6HQajmo7SUH9khC4lzYocjwKU0_QVsfTLX26Fxc_80wF20N93bAULdT5dzVDCOwENFTO6aJ21UCW6HkzgTFsnPndBhSHTZyU8hw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Canasta De Fresas" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Canasta De Fresas</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Un pastel decorado como una hermosa canasta de fresas frescas, ideal para sorprender en cualquier ocasión.</p>
+                 <a href="pastelcanastafresas.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdMQ5Nd6THhEfU2rE2DWI0sctqvSIhMts4nEG0juRaCuOad9K6nPB4mzfUP0dFgwOrpbcKMfW1dWrslVTOKwuoLl882hbwAyS9HF2pPPDFvxi5q_kPb4OzXkPtJTJu8YwskUgHTTQ?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Villamora Tropical" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+
+            <div class="product-info">
+                <h3 class="product-title">Pastel Villamora Tropical</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Delicioso pastel de vainilla con relleno de frutos tropicales, decorado con betún de tentación y frutas frescas.</p>
+                 <a href="pastelvillamoratropical.html"><button>Ver Más</button></a>
+            </div>
+                    </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfC0rEcv2sj6nFRPv-At9TVZbaOpgwVAubGLSaD3ly8WuTkQixxUnUtbYEx6j-fuu7r3qRfE8LWJsDa8CJV-trNzdDwSkcy2wkaLAiZGbSo8ul881QLtOXH5-hMddlpDojjdFXXLg?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Helado C/Cereza" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            
+            <div class="product-info">
+                <h3 class="product-title">Pastel Helado C/Cereza</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">Un fresco pastel helado con un toque de cereza, perfecto para los días calurosos o celebraciones especiales.</p>
+                 <a href="pastelheladocereza.html"><button>Ver Más</button></a>
+            </div>
+          
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfRvKqUd3Eq7ucP7Vh5ix4qk5U0cQ8kEU_SBCrUcIbHao65wAVdGJ3K228c2Vl2hN_awJ2Uua0VGE8K1wRK6r8r37lk_BEOMVQTRHNKyT_86r4a7AhjG82ITYidc7SyvqzClID_?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Rosca Conejito Turin" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Rosca Conejito Turin</h3>
+                <p class="product-category">Categoría: Chocolates</p>
+                <p class="product-description">Una rosca única con relleno de chocolate Turin y decorada con pequeños conejitos de chocolate.</p>
+                 <a href="pastelconejitoturin.html"><button>Ver Más</button></a>
+            </div>
+            
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXedVGr6BSaZF8gb-3cUCn72Q9uduDdiWgaQ6ND9Kvput5W4hBCKWjHxiT5L7pia51vJIGAe8oGA1eNO0b3eiqRtIGCXArESgxdyoEvW2-onaZMTrmvp88rXFr-lL7l4kQ3tXVYt?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Mil hojas chai" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel Mil hojas chai</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Delicado pastel de mil hojas con un toque de chai y crema batida, decorado con azúcar glass.</p>
+                 <a href="pastelmilhojas.html"><button>Ver Más</button></a>
+            </div>
+          
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcHsJdLtrgtqcWRREQ1CRtdXFGF-o-wStCRUZZkmxYyb9RGQEVD-3k-0UgTp0_9VgtfbCodeCsNhiSDgYuAqR_FmkwRaE3hpGdnqf1kBMxfhbYlguEBtnd-EjNWP8Yhp9fLM7sFtQ?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Capuchino" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel Capuchino</h3>
+                <p class="product-category">Categoría: Tres Leches</p>
+                <p class="product-description">Pastel de café con un baño de tres leches, relleno y cubierto con crema de café, decorado con nuez y almendra.</p>
+                 <a href="pastelcapuchino.html"><button>Ver Más</button></a>
+            </div>
+                    </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdHLBPw3s7jAHaeDzaTVn6qYdVpBx1qf_ZgMYernSXOrRKnQNnAQK8whTnYchwjNBBeNGRLdwElm6t2iaBipt9fUeaQoxr59w0IsSgKRGqvKg74GJzj2qJ4KOH3jGyC8EotDFdLtA?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel de Queso" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel de Queso</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Ancestral postre de queso con crocante base de galleta, cubierto con una ligera capa de yogurt y crema ácida con una capa de cerezas.</p>
+                 <a href="pastelqueso.html"><button>Ver Más</button></a>
+            </div>
+                    </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXctjnbzX9s4ioNpuPkXaHXLIWDWiSF_Ke-6nivHadmNFGZ-35YCOYzFz-Ym9IRM5Kp_lkviny9E0sIb4oA8kJbndY_uVUoOG1Yc0iwrOJyUe7ouItVz_Q4y_nvrSa73QXCnqB48lw?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Fiesta" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel Fiesta</h3>
+                <p class="product-category">Categoría: Frutas</p>
+                <p class="product-description">Pan sabor vainilla, relleno de mermelada de blueberry y cubierto con suave betún de queso crema y grageas de colores.</p>
+                 <a href="pastelfiesta.html"><button>Ver Más</button></a>
+            </div>
+           
+        </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeZCEQ3rWQQgZMkwdFB6gzjzFtFISfmpD4bHALYf2kpOttwTuuMk36pezgmkhP2vLrDnT7QYJKegRjzFWZkUJKkJAxMn0p6pCRVN1M4f7AznvXhy9sp020i9O42kFiUTIMJU8WW?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Helado Nube de Coco" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel Helado Nube de Coco</h3>
+                <p class="product-category">Categoría: Nevados</p>
+                <p class="product-description">Pastel de helado con centro de frambuesas naturales, crema batida, lluvia de coco y almendras tostadas.</p>
+                <a href="pastelnubecoco.html"><button>Ver Más</button></a>
+            </div>
+        
+        </div>
+        <div class="product-card"> 
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXd_V7m5f18yCIp1IxkeVg10og0vH4ahWYc2Ezk4f1sulWNCy3ldAnHfrLNc1bgSDrr1vh_DDxRQNMmVZ4ieaW9MRv2PmwE0wMwmzbMXnKOqKYhLO_Gy9-LdYL2K_tBUh6QqaVCF5w?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel de Queso con Cajeta" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel de Queso con Cajeta</h3>
+                <p class="product-category">Categoría: Rollos y Variedades</p>
+                <p class="product-description">Pastel de vainilla con capa de queso, relleno de cajeta y nuez tostada, decorado con crema especial y cajeta.</p>
+                 <a href="pastelquesocajeta.html"><button>Ver Más</button></a>
+            </div>
+                   </div>
+        <div class="product-card">
+            <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfbJqFSkim2HsAYaLV5olLH5Tnq_aL6x5y5R-P3NMUhnHamBkBEm_msC3_KwGfK2gcOh1Iap3p7DlmGDqqlO9nIT5DOu7UE6MoZahjqGzmxaxztPYRuawbO1LoiR4i9Zpn_8KLa-A?key=2CvgGwYW4-3YFO-oSvfvC6Gg" alt="Pastel Beso de Ángel" style="display: block; margin: 0 auto; width: 100%; height: auto;">
+            <div class="product-info">
+                <h3 class="product-title">Pastel Beso de Ángel</h3>
+                <p class="product-category">Categoría: Tres Leches</p>
+                <p class="product-description">Pastel tipo 3 leches, relleno de flan napolitano, una explosión de sabor y textura en cada rebanada.</p>
+                 <a href="pastelbesoangel.html"><button>Ver Más</button></a>
+            </div>
+            <div id="userInfo" style="position: absolute; top: 10px; right: 10px; font-size: 16px; font-family: Arial, sans-serif;">
+    <!-- Contenido dinámico aquí -->
+</div>
+
+<script>
+    const userInfoDiv = document.getElementById('userInfo');
+    const username = localStorage.getItem('username'); // Obtiene el nombre del usuario almacenado
+
+    if (username) {
+        // Si hay un usuario registrado, mostrar su nombre
+        userInfoDiv.innerHTML = `<span>Bienvenido, ${username}</span>`;
+    } else {
+        // Si no hay usuario registrado, mostrar botón de registro
+        userInfoDiv.innerHTML = `
+            <a href="registro.html" style="text-decoration: none; color: white; background-color: #ff785a; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+                Registrarse
+            </a>
+        `;
+    }
+</script>
+
+        </div>
+    </div>
+</body>
+</html>

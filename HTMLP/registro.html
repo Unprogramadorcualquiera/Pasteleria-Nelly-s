@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff5ee;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #ff785a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e56649;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <p id="message"></p>
+        <a href="index.html">Ir a la página principal</a>
+    </div>
+
+    <script>
+        // Manejar el registro
+        const form = document.getElementById('registerForm');
+        const message = document.getElementById('message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+
+            // Guardar datos en localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+
+            message.textContent = `¡Bienvenido, ${username}! Tu registro ha sido exitoso.`;
+        });
+
+        // Comprobar si el usuario ya está registrado
+        const savedUsername = localStorage.getItem('username');
+        if (savedUsername) {
+            message.textContent = `¡Hola de nuevo, ${savedUsername}!`;
+        }
+    </script>
+</body>
+</html>

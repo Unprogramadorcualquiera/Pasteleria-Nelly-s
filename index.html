@@ -87,7 +87,7 @@
         }
 
         .hero {
-            background-image: url('https://as1.ftcdn.net/v2/jpg/02/72/26/76/1000_F_272267692_PKz9gseQsPguoAJPiaAIC0SBi7YtkL2z.jpg');
+            background-image: url('https://lh7-rt.googleusercontent.com/docsz/AD_4nXeDSF05yIeIV-fz5GQPJE0GycGvl7r0VchYQkBU5z8UbDIam_LYSA2X9Ta-eyao__xUk4elHbbcJJzqREhy5_l35N3jaaMAQRlf7fExokKnIRi1RBereQSCVVO4dH_yeFrdFhLr7w?key=2CvgGwYW4-3YFO-oSvfvC6Gg');
             background-size: cover;
             background-position: center;
             height: 600px;
@@ -267,18 +267,22 @@
     <nav>
         <div class="nav-links">
             <a href="#">Inicio</a>
-            <a href="#">Nosotros</a>
-            <a href="#">Productos</a>
-            <a href="#">Contacto</a>
+            <a href="HTML/nosotros.html
+">Nosotros</a>
+            <a href="HTML/productos.html">Productos</a>
+            <a href="HTML/contacto.html">Contacto</a>
+            <a href="HTML/soporte.html">Soporte</a>
         </div>
 
         <!-- Icono de búsqueda -->
         <a href="HTML/buscador.html">
-            <img src="https://static.vecteezy.com/system/resources/previews/009/385/752/non_2x/magnifying-glass-sign-search-icon-free-png.png" alt="Buscar" class="search-icon">
+            <img src="https://cdn-icons-png.freepik.com/512/13/13311.png" alt="Buscar" class="search-icon">
         </a>
+<!-- Carrito de compras con imagen -->
+<a href="HTML/carrito.html" class="cart">
+    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito de compras">
+</a>
 
-        <!-- Carrito de compras -->
-        <a href="HTML/carrito.html" class="cart">🛒</a>
     </nav>
 
     <section class="hero">
@@ -314,32 +318,7 @@
         </div>
     </section>
 
-    <!-- Sección de Especiales del Mes -->
-    <section id="especiales-del-mes">
-        <div class="specials-section">
-            <h2>Especiales del Mes</h2>
-            <div class="specials-container">
-                <div class="specials-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAM21N8xb7HUFy4FRLd9xxErt6JqP7Hnb_OA&s" alt="Pastel de Zanahoria">
-                    <h3>Pastel de Zanahoria</h3>
-                    <p>350 pesos</p>
-                    <button onclick="agregarAlCarrito('Pastel de Zanahoria', 350)">Agregar al carrito</button>
-                </div>
-                <div class="specials-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL6R00UNXi-GMF8tK3cqfypmCO0jgW8bXBug&s" alt="Pan de Plátano">
-                    <h3>Pan de Plátano</h3>
-                    <p>300 pesos</p>
-                    <button onclick="agregarAlCarrito('Pan de Plátano', 300)">Agregar al carrito</button>
-                </div>
-                <div class="specials-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS65u7TsXILouy-mO2fydC9VSstO4M1uPB3_w&s" alt="Pan de Elote">
-                    <h3>Pan de Elote</h3>
-                    <p>250 pesos</p>
-                    <button onclick="agregarAlCarrito('Pan de Elote', 250)">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <section id="categorias">
         <div class="category-section category-pasteles">
             <h2>Pasteles</h2>
@@ -379,10 +358,9 @@
     <script>
         function agregarAlCarrito(nombreProducto, precioProducto) {
             // Aquí puedes agregar la lógica para añadir el producto al carrito
-            console.log(`Producto agregado: ${nombreProducto}, Precio: ${precioProducto}`);
-            alert(`Has agregado ${nombreProducto} al carrito por ${precioProducto} pesos.`);
+            console.log(Producto agregado: ${nombreProducto}, Precio: ${precioProducto});
+            alert(Has agregado ${nombreProducto} al carrito por ${precioProducto} pesos.);
         }
     </script>
-
 </body>
 </html>

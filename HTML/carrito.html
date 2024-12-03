@@ -3,327 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito - Pastelería Nelly</title>
+    <title>Carrito de Compras</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff8e1;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #ff5e57;
+            background-color: #ff785a;
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            font-family: 'Georgia', serif;
-            font-weight: bold;
         }
 
-        .cart-container {
-            flex: 1;
-            padding: 20px;
-            padding-bottom: 100px; /* Espacio para el contenedor de pago */
-            overflow-y: auto; /* Hacer que el contenido sea desplazable */
-        }
-
-        .back-button {
-            display: block;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #ff5e57;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
+        .cart-icon {
+            width: 30px;
+            height: 30px;
             cursor: pointer;
         }
 
-        .back-button:hover {
-            background-color: #ff785a;
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
         }
 
-        .cart-items-container {
+        .cart-header {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            perspective: 1000px; /* Perspectiva 3D para el contenedor de los productos */
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
         }
 
-        .cart-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            list-style: none;
+        .cart-header h2 {
             margin: 0;
-            padding: 0;
-            transform-style: preserve-3d; /* Preservar el estilo 3D de los hijos */
-            transform: rotateY(-15deg); /* Rotar el contenedor para el efecto 3D */
-            transition: transform 0.5s ease;
         }
 
         .cart-item {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            margin: 0;
-            background-color: #fff3e0;
-            border-radius: 5px;
-            position: relative;
-            transform: rotateY(0deg); /* Ajustar para el efecto 3D */
-            transform-style: preserve-3d;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            width: 200px;
-        }
-
-        .cart-item:hover {
-            transform: rotateY(10deg); /* Efecto 3D al pasar el ratón */
+            background-color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .cart-item img {
-            width: 60px;
-            height: 60px;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            max-width: 80px;
+            height: auto;
+            border-radius: 10px;
         }
 
-        .cart-item h3 {
+        .cart-item-details {
+            flex: 1;
+            margin-left: 1rem;
+        }
+
+        .cart-item-details h3 {
             margin: 0;
-            font-size: 1.2em;
+            color: #333;
         }
 
-        .cart-item p {
-            margin: 0;
-            font-size: 1.1em;
-            color: #ff5e57;
+        .cart-item-details p {
+            margin: 0.5rem 0;
+            color: #555;
         }
 
-        .remove-btn {
-            background-color: #ff5e57;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        .remove-btn:hover {
-            background-color: #ff785a;
-        }
-
-        .ratings {
+        .cart-item-actions {
             display: flex;
-            justify-content: center;
-            margin: 10px 0;
+            gap: 0.5rem;
+            align-items: center;
         }
 
-        .rating-star {
-            color: gold;
-            font-size: 1.5em;
+        .cart-item-actions input {
+            width: 50px;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .cart-item-actions button {
+            background-color: #ff785a;
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
             cursor: pointer;
         }
 
-        .rating-star.selected {
-            color: orange;
+        .cart-item-actions button:hover {
+            background-color: #ff5733;
         }
 
-        .fixed-footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #fff8e1;
-            padding: 20px;
-            border-top: 2px solid #ff5e57;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        .cart-total {
+            text-align: right;
+            background-color: white;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            z-index: 1000; /* Asegurar que esté por encima de otros elementos */
         }
 
-        .fixed-footer .total-price {
-            font-size: 1.5em;
+        .cart-total h3 {
+            margin: 0;
+        }
+
+        .cart-total .total-amount {
+            color: #ff785a;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #ff5e57;
         }
 
-        .fixed-footer .checkout,
-        .fixed-footer .back-button {
-            padding: 15px;
-            background-color: #ff5e57;
-            color: white;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            margin-left: 10px;
+        .cart-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
         }
 
-        .fixed-footer .checkout:hover,
-        .fixed-footer .back-button:hover {
+        .cart-buttons button {
             background-color: #ff785a;
-        }
-
-        .fixed-footer .back-button {
-            background-color: #ff785a; /* Color diferente para el botón de volver */
-        }
-
-        .recommendation {
-            display: none;
-            padding: 20px;
-            background-color: #fff3e0;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
             border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-buttons button:hover {
+            background-color: #ff5733;
+        }
+
+        .empty-cart-message {
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 20px;
-        }
-
-        .recommendation img {
-            width: 100px;
-            height: 100px;
-            border-radius: 5px;
-        }
-
-        .recommendation h2 {
-            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #555;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>Carrito de Compras</h1>
+        <div>
+            <a href="../index.html">
+                <button>Volver al Inicio</button>
+            </a>
+        </div>
     </header>
 
     <div class="cart-container">
-        <button onclick="window.location.href='buscador.html'" class="back-button">Volver al Buscador</button>
-
-        <div class="cart-items-container">
-            <ul class="cart-items" id="cart-items">
-                <!-- Los productos del carrito se agregarán aquí -->
-            </ul>
+        <div class="cart-header">
+            <h2>Productos en tu carrito</h2>
+            <span id="cartCount">0</span> productos
         </div>
 
-        <div class="recommendation" id="recommendation">
-            <h2>Recomendaciones del Chef</h2>
-            <img src="" alt="Producto Recomendado" id="recommendation-image">
-            <p id="recommendation-name"></p>
-            <p id="recommendation-price"></p>
+        <div id="cartItems">
+            <!-- Los productos se agregarán aquí dinámicamente -->
         </div>
-    </div>
 
-    <div class="fixed-footer">
-        <button class="back-button" onclick="window.location.href='buscador.html'">Volver al Buscador</button>
-        <div class="total-price" id="total-price">Total: $MXN 0</div>
-        <button class="checkout" onclick="proceedToPayment()">Pagar</button>
+        <div class="cart-total">
+            <h3>Total:</h3>
+            <span class="total-amount" id="totalAmount">0</span> €
+        </div>
+
+        <div class="cart-buttons">
+            <button id="clearCart">Vaciar carrito</button>
+            <button id="checkout">Finalizar compra</button>
+        </div>
+
+        <div class="empty-cart-message" id="emptyCartMessage">
+            El carrito está vacío.
+        </div>
     </div>
 
     <script>
-        const products = [
-            { name: 'Pastel de Chocolate', price: 250, image: 'chocolate-cake.jpg' },
-            { name: 'Tarta de Frutas', price: 200, image: 'fruit-tart.jpg' },
-            { name: 'Galletas de Vainilla', price: 100, image: 'vanilla-cookies.jpg' },
-            { name: 'Brownies', price: 150, image: 'brownies.jpg' },
-            { name: 'Macarons', price: 180, image: 'macarons.jpg' }
-        ];
+        // Actualiza el contador de productos en el carrito
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
 
-        function loadCart() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const totalPriceElement = document.getElementById('total-price');
-            const recommendationSection = document.getElementById('recommendation');
-            const recommendationImage = document.getElementById('recommendation-image');
-            const recommendationName = document.getElementById('recommendation-name');
-            const recommendationPrice = document.getElementById('recommendation-price');
-
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let totalPrice = 0;
-
-            cartItemsContainer.innerHTML = ''; // Limpiar el contenedor
+        // Muestra los productos en el carrito
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+            cartItemsContainer.innerHTML = ''; // Limpiar carrito antes de renderizar
 
             if (cart.length === 0) {
-                // Mostrar recomendación aleatoria si el carrito está vacío
-                const randomProduct = products[Math.floor(Math.random() * products.length)];
-                recommendationImage.src = randomProduct.image;
-                recommendationName.textContent = randomProduct.name;
-                recommendationPrice.textContent = `$${randomProduct.price.toFixed(2)}`;
-                recommendationSection.style.display = 'block';
+                document.getElementById('emptyCartMessage').style.display = 'block';
             } else {
-                recommendationSection.style.display = 'none';
+                document.getElementById('emptyCartMessage').style.display = 'none';
+
+                cart.forEach(item => {
+                    const cartItemDiv = document.createElement('div');
+                    cartItemDiv.classList.add('cart-item');
+                    cartItemDiv.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-details">
+                            <h3>${item.name}</h3>
+                            <p>${item.description}</p>
+                        </div>
+                        <div class="cart-item-actions">
+                            <input type="number" value="${item.quantity}" min="1" class="quantity" data-id="${item.id}">
+                            <button class="remove" data-id="${item.id}">Eliminar</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItemDiv);
+                });
+
+                updateCartTotal();
             }
-
-            cart.forEach((product, index) => {
-                const cartItem = document.createElement('li');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>$${product.price.toFixed(2)}</p>
-                    <div class="ratings" id="ratings-${index}">
-                        ${renderStars(product.rating, index)}
-                    </div>
-                    <button class="remove-btn" onclick="removeFromCart(${index})">Eliminar</button>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-
-                // Calcular el precio total
-                const price = parseFloat(product.price);
-                totalPrice += price;
-            });
-
-            totalPriceElement.textContent = `Total: $MXN ${totalPrice.toFixed(2)}`;
         }
 
-        function renderStars(rating, index) {
-            let stars = '';
-            for (let i = 1; i <= 5; i++) {
-                stars += `<span class="rating-star ${i <= rating ? 'selected' : ''}" onclick="rateProduct(${index}, ${i})">★</span>`;
-            }
-            return stars;
+        // Actualiza el total del carrito
+        function updateCartTotal() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
         }
 
-        function rateProduct(index, rating) {
+        // Agregar un producto al carrito
+        function addToCart(product) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingProduct = cart.find(item => item.id === product.id);
+
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            displayCart();
+        }
+
+        // Eliminar un producto del carrito
+        function removeFromCart(productId) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            if (cart[index]) {
-                cart[index].rating = rating;
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            displayCart();
+        }
+
+        // Actualizar la cantidad de un producto
+        function updateQuantity(productId, newQuantity) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const product = cart.find(item => item.id === productId);
+            if (product) {
+                product.quantity = newQuantity;
                 localStorage.setItem('cart', JSON.stringify(cart));
-                loadCart(); // Actualizar la vista del carrito
+                updateCartTotal();
             }
         }
 
-        function removeFromCart(index) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.splice(index, 1); // Eliminar el producto del carrito
+        // Vaciar el carrito
+        document.getElementById('clearCart').addEventListener('click', () => {
+            localStorage.removeItem('cart');
+            updateCartCount();
+            displayCart();
+        });
 
-            localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado
-            loadCart(); // Actualizar la vista del carrito
-        }
+        // Finalizar compra (aún no implementado, ejemplo)
+        document.getElementById('checkout').addEventListener('click', () => {
+            alert('Proceso de compra en desarrollo');
+        });
 
-        function proceedToPayment() {
-            // Aquí iría la lógica para proceder al pago
-            alert('Procediendo al pago...');
-        }
+        // Eventos para las acciones del carrito
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove')) {
+                const productId = e.target.dataset.id;
+                removeFromCart(productId);
+            }
 
-        window.onload = function() {
-            loadCart();
-        }
+            if (e.target.classList.contains('quantity')) {
+                const productId = e.target.dataset.id;
+                const newQuantity = parseInt(e.target.value, 10);
+                updateQuantity(productId, newQuantity);
+            }
+        });
+
+        // Inicialización
+        updateCartCount();
+        displayCart();
     </script>
-
 </body>
 </html>
